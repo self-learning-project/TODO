@@ -19,7 +19,7 @@
   background-color: #fff;
   margin: 100px auto 20px;
   border-radius: 10px;
-  padding: 40px 30px 70px;
+  padding: 40px 30px;
 }
 
 .todo-app h2 {
@@ -118,4 +118,8 @@ ul li span:hover {
   background-color: #edeef0;
   color: #fff;
   background-color: #f44336;
+}
+
+.clear-data {
+  margin-top: 22px;
 }

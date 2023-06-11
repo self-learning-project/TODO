@@ -44,3 +44,13 @@ function showToDo() {
   ulElement.innerHTML = localStorage.getItem("data");
 }
 showToDo();
+
+const clearData = () => {
+  let confirmText =
+    "Are you sure you want to delete all to To-Do's? This will be deleted forever.";
+  let confirmFlag = confirm(confirmText);
+  if (confirmFlag == true) {
+    localStorage.clear();
+    showToDo();
+  }
+};
