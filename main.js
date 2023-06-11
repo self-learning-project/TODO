@@ -1,5 +1,6 @@
 const todoInput = document.getElementById("todo-input");
 const ulElement = document.getElementById("list-todo-container");
+// console.log(localStorage);
 
 function handleClick() {
   let todoValue = todoInput.value;
@@ -15,6 +16,7 @@ function handleClick() {
     liElement.appendChild(spanElement);
   }
   todoInput.value = "";
+  saveData();
 }
 
 todoInput.addEventListener("keypress", (e) => {
@@ -27,7 +29,18 @@ todoInput.addEventListener("keypress", (e) => {
 ulElement.addEventListener("click", (e) => {
   if (e.target.nodeName === "LI") {
     e.target.classList.toggle("checked");
+    saveData();
   } else if (e.target.nodeName === "SPAN") {
     e.target.parentNode.remove();
+    saveData();
   }
 });
+
+function saveData() {
+  localStorage.setItem("data", ulElement.innerHTML);
+}
+
+function showToDo() {
+  ulElement.innerHTML = localStorage.getItem("data");
+}
+showToDo();

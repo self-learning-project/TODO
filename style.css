@@ -70,6 +70,11 @@ ul li {
   user-select: none;
   cursor: pointer;
   position: relative;
+  border-radius: 40px;
+}
+
+ul li:hover {
+  background-color: #edeef0;
 }
 
 ul li:before {
@@ -99,7 +104,7 @@ ul li.checked:before {
 ul li span {
   position: absolute;
   right: 0;
-  top: 5px;
+  top: 1px;
   width: 40px;
   height: 40px;
   font-size: 22px;
@@ -111,4 +116,6 @@ ul li span {
 
 ul li span:hover {
   background-color: #edeef0;
+  color: #fff;
+  background-color: #f44336;
 }
