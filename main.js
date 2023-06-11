@@ -7,9 +7,27 @@ function handleClick() {
     alert("Please Enter the To-Do List");
   } else {
     let liElement = document.createElement("li");
-    console.log(liElement);
     liElement.innerHTML = todoValue;
     ulElement.appendChild(liElement);
+
+    let spanElement = document.createElement("span");
+    spanElement.innerHTML = "\u00d7";
+    liElement.appendChild(spanElement);
   }
   todoInput.value = "";
 }
+
+todoInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault();
+    handleClick();
+  }
+});
+
+ulElement.addEventListener("click", (e) => {
+  if (e.target.nodeName === "LI") {
+    e.target.classList.toggle("checked");
+  } else if (e.target.nodeName === "SPAN") {
+    e.target.parentNode.remove();
+  }
+});
